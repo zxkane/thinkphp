@@ -284,6 +284,7 @@ function U($url='',$vars='',$suffix=true,$redirect=false,$domain=false) {
     if($domain) {
         $url   =  (is_ssl()?'https://':'http://').$domain.$url;
     }
+    $url = str_ireplace("/empty", "", $url);
     if($redirect) // 直接跳转URL
         redirect($url);
     else
